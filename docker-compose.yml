@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+
+  # InfluxDB Container
+  influxdb:
+    image: tutum/influxdb:0.10
+    ports:
+      - "8086:8086"
+      - "8083:8083"
+    environment:
+      PRE_CREATE_DB: telegraf
+      ADMIN_USER: foobar
+      INFLUXDB_INIT_PWD: foobar
+    volumes:
+      - /var/influxdb:/data
+
+  # Telegraf Container
+  telegraf:
+    image: wtsnz/telegraf
+    environment:
+      INFLUXDB_HOST: influxdb
+    ports:
+      - "8125:8125/udp"
+
+  # Chronograf Container
+  chronograf:
+    image: jbye/chronograf
+    ports:
+      - "10000:10000"
