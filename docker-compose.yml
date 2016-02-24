@@ -12,8 +12,8 @@ services:
       PRE_CREATE_DB: telegraf
       ADMIN_USER: foobar
       INFLUXDB_INIT_PWD: foobar
-      INFLUXDB_REPORTING_DISABLED: true
-      INFLUXDB_AUTH_ENABLED: true
+      INFLUXDB_REPORTING_DISABLED: "true"
+      INFLUXDB_AUTH_ENABLED: "true"
     volumes:
       - /var/influxdb:/data
 
