@@ -19,7 +19,7 @@ services:
 
   # Telegraf Container
   telegraf:
-    image: loicortola/telegraf
+    image: wtsnz/telegraf
     environment:
       INFLUXDB_HOST: influxdb
       HOST: influxdb
