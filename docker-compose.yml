@@ -19,9 +19,13 @@ services:
 
   # Telegraf Container
   telegraf:
-    image: wtsnz/telegraf
+    image: loicortola/telegraf
     environment:
       INFLUXDB_HOST: influxdb
+      HOST: influxdb
+      USERNAME: foobar
+      PASSWORD: foobar
+      DB: telegraf
     ports:
       - "8125:8125/udp"
 
