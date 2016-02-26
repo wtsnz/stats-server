@@ -26,6 +26,7 @@ services:
       USERNAME: foobar
       PASSWORD: foobar
       DB: telegraf
+      INTERVAL: 10s
     ports:
       - "8125:8125/udp"
 
